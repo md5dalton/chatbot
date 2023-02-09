@@ -22,7 +22,7 @@ const Col = ({ children, info }) => (
 )
 
 export default () => (
-    <ul className="grid grid-cols-3 gap-x-2 text-center">
+    <ul className="grid grid-cols-3 gap-2 text-center">
         <Col info={items.examples}>
             <SunIcon className="h-8 w-8 mx-auto" />
             <h2>Examples</h2>
