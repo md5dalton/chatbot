@@ -1,3 +1,4 @@
+import Sidebar from '@/components/Sidebar'
 import './globals.css'
 
 export default function RootLayout({ children }) {
@@ -8,7 +9,15 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className="flex text-white">
+        <aside>
+          <Sidebar />
+        </aside>
+        {/* Client provider */}
+        <main className="flex-1 bg-[#343541]">
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
