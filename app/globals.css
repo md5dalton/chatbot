@@ -4,6 +4,6 @@
 
 @layer components {
     .chat-row {
-        @apply flex items-center justify-center gap-x-2 px-5 py-3 text-sm text-gray-300 cursor-pointer rounded-lg hover:bg-gray-700/50 transition-all duration-200 ease-linear
+        @apply flex items-center gap-x-2 px-5 py-3 text-sm text-gray-300 cursor-pointer rounded-lg hover:bg-gray-700/50 transition-all duration-200 ease-linear
     }
 }
