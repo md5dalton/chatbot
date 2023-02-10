@@ -16,24 +16,31 @@ const Col = ({ children, info }) => (
         <UList
             className="space-y-2 mt-5"
             items={info}
-            itemHandler={info => <p className="p-4 bg-gray-700/50 rounded-lg max-w-xs">{info}</p> }
+            itemHandler={info => <p className="p-3 rounded-lg bg-white/5 text-center">{info}</p> }
         />
     </li>
 )
 
 export default () => (
-    <ul className="grid grid-cols-3 gap-2 text-center">
+    // <ul className="grid grid-cols-3 gap-2 text-center">
+    <ul className="grid gap-y-8 pb-4 px-6">
         <Col info={items.examples}>
-            <SunIcon className="h-8 w-8 mx-auto" />
-            <h2>Examples</h2>
+            <div className="flex items-center justify-center gap-x-2 m-auto">
+                <SunIcon className="h-6 w-6" />
+                <h2 className="text-lg">Examples</h2>
+            </div>
         </Col>
         <Col info={items.examples}>
-            <BoltIcon className="h-8 w-8 mx-auto" />
-            <h2>Capabilities</h2>
+            <div className="flex items-center justify-center gap-x-2 m-auto">
+                <BoltIcon className="h-6 w-6" />
+                <h2 className="text-lg">Capabilities</h2>
+            </div>
         </Col>
         <Col info={items.examples}>
-            <ExclamationTriangleIcon className="h-8 w-8 mx-auto" />
-            <h2>Limitation</h2>
+            <div className="flex items-center justify-center gap-x-2 m-auto">
+                <ExclamationTriangleIcon className="h-6 w-6" />
+                <h2 className="text-lg">Limitation</h2>
+            </div>
         </Col>
     </ul>
 )
