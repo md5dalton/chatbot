@@ -4,7 +4,7 @@ import Chats from "./Chats"
 import Controls from "./Controls"
 
 export default ({ toggleHandler }) => (
-    <div className="flex h-screen">
+    <div className="flex h-full">
         <div className="bg-[#202123] p-2 flex flex-col w-80">
             <Chats />
             <Controls />
