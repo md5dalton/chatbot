@@ -4,13 +4,13 @@ import Chats from "./Chats"
 import Controls from "./Controls"
 
 export default ({ toggleHandler }) => (
-    <div className="flex items-start">
-        <div className="grow bg-[#202123] h-screen p-2 flex flex-col">
+    <div className="flex h-screen">
+        <div className="bg-[#202123] p-2 flex flex-col w-80">
             <Chats />
             <Controls />
         </div>
-        <div className="p-2">
-            <button onClick={toggleHandler} className="p-2"><XMarkIcon className="w-6 h-6" /></button>
+        <div className="flex grow p-2 md:hidden">
+            <button onClick={toggleHandler} className="flex grow p-2"><XMarkIcon className="w-6 h-6" /></button>
         </div>
     </div>
 )

@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default ({ user: { avatar }, text, botMessage }) => (
     <div className={`${botMessage ? " bg-[#434654]" : ""}`}>
-        <div className="flex gap-x-4 p-4">
+        <div className="flex gap-x-4 p-4 mx-auto max-w-3xl">
             <Image
                 className="h-8 w-8"
                 height={32}
