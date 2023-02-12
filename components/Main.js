@@ -8,7 +8,7 @@ import Sidebar from "./Sidebar"
 
 export default ({ children }) => {
 
-    const [ sidebarOpen, setSidebarOpen ] = useState(true)
+    const [ sidebarOpen, setSidebarOpen ] = useState(false)
 
     const toggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
