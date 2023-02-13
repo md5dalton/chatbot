@@ -26,9 +26,9 @@ export default ({ id }) => {
 
     return (
         <NavLink href={`/chat/${id}`} className="chat-row">
-            <ChatBubbleLeftIcon className="h-4 w-4" />
+            <ChatBubbleLeftIcon className="shrink-0 h-4 w-4" />
             <p className="grow truncate">{message}</p>
-            <TrashIcon onClick={() => removeChat()} className="h-4 w-4 text-gray-700 hover:text-red-700" />
+            <TrashIcon onClick={() => removeChat()} className="shrink-0 h-4 w-4 text-gray-700 hover:text-red-700" />
         </NavLink>
     )
 }
