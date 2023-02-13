@@ -1,2 +1,15 @@
+import admin from "firebase-admin"
+import { getApps } from "firebase/app"
 
-const ser
+// const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY)
+const serviceAccount = require("./servicekey.json")
+
+if (!getApps().length) {
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    })
+}
+
+const adminDB = admin.firestore()
+
+export { adminDB }
