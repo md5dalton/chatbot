@@ -4,23 +4,39 @@ import { db } from "@/firebase"
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline"
 import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { useSession } from "next-auth/react"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 import toast from "react-hot-toast"
 
 export default () => {
 
     const [ message, setMessage ] = useState("")
+    const router = useRouter()
     const pathname = usePathname()
-    const chatId = pathname.split("/").pop()
+    const pageId = pathname.split("/").pop()
+    
 
     const { data: session } = useSession()
 
     const model = "text-davinci-003"
 
+    const createChat = async () => {
+        
+        const doc = await addDoc(
+            collection(db, "users", session.user?.email, "chats"),
+            {
+                userId: session.user?.email,
+                created: serverTimestamp()
+            }
+        )
+        return doc.id
+    }
+
     const messageHandler = async ev => {
         ev.preventDefault()
         if (!message) return
+
+        const chatId = pageId ? pageId : await createChat()
 
         const text = message.trim()
         setMessage("")
@@ -47,6 +63,8 @@ export default () => {
         })
         .then(() => toast.success("ChatGPT has responded", {id: notification}))
         .catch(err => toast.error("ChatGPT has crapped out", {id: notification}))
+
+        if (!pageId && chatId) router.push(`/chat/${chatId}`) 
 
     }
     
