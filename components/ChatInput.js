@@ -41,16 +41,16 @@ export default () => {
         const text = message.trim()
         setMessage("")
 
-        const obj = {
-            text,
-            created: serverTimestamp(),
-            user: session?.user.email
-        }
+        // const obj = {
+        //     text,
+        //     created: serverTimestamp(),
+        //     user: session?.user.email
+        // }
 
-        await addDoc(
-            collection(db, "users", session?.user.email, "chats", chatId, "messages"),
-            obj
-        )
+        // await addDoc(
+        //     collection(db, "users", session?.user.email, "chats", chatId, "messages"),
+        //     obj
+        // )
 
         const notification = toast.loading("ChatGPT is thinking")
 
@@ -58,7 +58,8 @@ export default () => {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
-                text, chatId, model, session
+                text, chatId, model,
+                userId: session?.user.email
             })
         })
         .then(() => toast.success("ChatGPT has responded", {id: notification}))
