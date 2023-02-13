@@ -1,6 +1,6 @@
 import chatgpt from "./chatgpt"
 
-export default async (prompt, chatId, model) => {
+export default async (prompt, model) => {
     const res = await chatgpt.createCompletion({
         model,
         prompt,
