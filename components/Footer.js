@@ -7,10 +7,10 @@ export default () => (
             <ChatInput />
             <p className="text-center text-xs pt-2 pb-3">
                 ChatGPT clone app by 
-                <Link className="mx-1 underline" href="https://www.twitter.com/md5dalton" prefetch={false}>
+                <Link target="_blank" className="mx-1 underline" href="https://www.twitter.com/md5dalton" prefetch={false}>
                     Majara Mpiti.
                 </Link>
-                My goal is to improve my fullstack developer skills.
+                I'm a frontend developer with a passion for creating beautiful, responsive web applications.
             </p>
 
         </div>
